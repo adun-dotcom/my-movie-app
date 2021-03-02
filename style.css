@@ -1,0 +1,162 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+}
+
+html {
+  font-size: 65.2%;
+}
+
+body {
+  background-image: linear-gradient(to top, #17061fe6, rgba(15, 10, 10, 0.3)),
+    url('https://assets.nflxext.com/ffe/siteui/vlv3/e178a4e7-4f52-4661-b2ae-41efa25dca7c/937435c1-c5b7-4cd1-bf62-62ba5d30ef47/NG-en-20210222-popsignuptwoweeks-perspective_alpha_website_small.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  position: relative;
+  color: #949393;
+  font-size: 0.9rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  padding-top: 50px ;
+}
+
+main {
+  padding-bottom: 70px;
+}
+
+main #movie-app {
+  color: rgb(206, 3, 3);
+  font-size: 3rem;
+  font-weight: 700;
+  position: absolute;
+  top: 2%;
+  left: 30px;
+}
+
+.container-div {
+  background: rgba(12, 12, 12, 0.9);
+  max-width: 100%;
+  width: 300px;
+  height: auto;
+  margin: auto;
+  padding: 50px;
+}
+
+h1 {
+  font-size: 2rem;
+  padding-bottom: 10px;
+  color: #fff;
+}
+
+#form {
+  width: 100%;
+}
+
+input {
+  width: 100%;
+  background: #454545;
+  margin: 20px 0;
+  padding: 10px;
+  border-radius: 5px;
+  outline: none;
+  border-color: #454545;
+}
+
+input::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  color: #949393;
+}
+
+#form .btn {
+  background: rgb(206, 3, 3);
+  width: 100%;
+  height: 35px;
+  border-color: rgb(206, 3, 3);
+  border-radius: 5px;
+  outline: none;
+  margin-top: 20px;
+}
+
+#form .btn:active {
+  border: 1px solid #fff;
+}
+
+#form .btn a {
+  color: #fff;
+}
+
+.help-text {
+  color: #949393;
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+.help-text .fa-square {
+  background: #fff;
+  color: #fff;
+  margin-right: 2px;
+}
+
+.login-text {
+  color: #454545;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+}
+
+.login-text img {
+  width: 1.4rem;
+  margin-left: -2px;
+  margin-right: 5px;
+}
+
+.signup-text {
+  font-size: 1.1rem;
+  padding-top: 7px;
+}
+
+.signup-text span {
+  color: #fff;
+}
+
+.learnmore-text {
+  padding-top: 7px;
+}
+
+/* footer */
+footer {
+  background: rgba(12, 12, 12, 0.9);
+  width: 100%;
+  height: auto;
+  padding: 40px;
+}
+
+footer .footer-div {
+  max-width: 100%;
+  width: 500px;
+  margin: auto;
+}
+
+footer .footer-div p {
+  padding-bottom: 10px;
+}
+
+footer .footer-div .footer-flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+footer .footer-div .footer-flex li {
+  line-height: 2;
+}
