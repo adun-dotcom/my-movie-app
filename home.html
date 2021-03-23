@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="./slick-1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" href="./slick-1.8.1/slick/slick-theme.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="home.css" />
+    <title>Movie App Home-page</title>
+  </head>
+  <body>
+    <nav>
+      <div>
+        <span><i class="fas fa-signal"></i> Media App</span>
+      </div>
+      <div>
+        <form action="" id="form">
+          <input class="input" type="text" placeholder="search movies" />
+          <i class="fas fa-search"></i>
+        </form>
+      </div>
+      <div class="account-link">
+        <a href="#">Account Settings</a>
+      </div>
+    </nav>
+
+    <!-- main -->
+    <main>
+      <section class="showcase">
+        <video src="Pexels Videos 2169879 (1).mp4" autoplay muted loop></video>
+        <div class="overlay"></div>
+        <div class="text">
+          <h2>title</h2>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis
+            facilis obcaecati ab necessitatibus iste expedita nemo modi delectus
+            quasi ad?
+          </p>
+          <button class="play-btn"><i class="fas fa-play"></i> play</button>
+          <button class="more-btn">
+            <i class="fas fa-info-circle"></i> more info
+          </button>
+        </div>
+      </section>
+      <!-- video gallery div -->
+      <section class="movie-showcase">
+        <!-- gallery1 -->
+        <div id="video-gallery1" class="video-gallery">
+          <p>Trending Now</p>
+          <div class="galleries1 gallery-div"></div>
+        </div>
+
+        <!-- gallery2 -->
+        <div id="video-gallery2" class="video-gallery">
+          <p>Watch Later</p>
+               <div class="galleries2 gallery-div"></div>
+          </div>
+      
+
+        <!-- gallery3 -->
+        <div id="video-gallery3" class="video-gallery">
+          <p>Comedy</p>
+          <div class="galleries3 gallery-div"></div>
+        </div>
+
+        <!-- gallery4 -->
+        <div id="video-gallery4" class="video-gallery">
+          <p>Top Lists</p>
+          <div class="galleries4 gallery-div"></div>
+        </div>
+
+        <!-- gallery5 -->
+        <div id="video-gallery5" class="video-gallery">
+          <p>Favorite Shows</p>
+          <div class="galleries5 gallery-div"></div>
+        </div>
+
+        <!-- overlay -->
+      </section>
+
+      <!-- modal class -->
+      <div class="modal-container hidden">
+        <div class="modal-overlay"></div>
+        <div class="modal">
+          <div class="modal-image"></div>
+          <div class="modal-content">
+            <div class="modal-icons">
+              <div>
+                <i class="fas fa-play"></i>
+              </div>
+              <div><i class="fas fa-chevron-down"></i></div>
+            </div>
+            <div class="modal-overview"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="./slick-1.8.1/slick/slick.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
+
+ 
