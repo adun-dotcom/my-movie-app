@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="./slick-1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" href="./slick-1.8.1/slick/slick-theme.css">
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
@@ -29,22 +31,8 @@
 
     <!-- main -->
     <main>
-      <!-- <div class="small-grid">
-          <p>
-            <a href="#video-gallery1">Trending Now</a>
-            <i class="fas fa-arrow-right"></i>
-          </p>
-
-          <ul>
-            <li><a href="#video-gallery2">Watch later</a></li>
-            <li><a href="#video-gallery3">Comedy</a></li>
-            <li><a href="#video-gallery4">Top Lists</a></li>
-            <li><a href="#video-gallery5">Favorite shows</a></li>
-          </ul>
-        </div> -->
-
       <section class="showcase">
-        <video src="#" autoplay muted loop></video>
+        <video src="Pexels Videos 2169879 (1).mp4" autoplay muted loop></video>
         <div class="overlay"></div>
         <div class="text">
           <h2>title</h2>
@@ -61,70 +49,62 @@
       </section>
       <!-- video gallery div -->
       <section class="movie-showcase">
-        <div class="large-grid">
-          <!-- gallery1 -->
-          <div id="video-gallery1" class="video-gallery">
-            <p>Trending Now</p>
-            <div class="galleries1 gallery-div"></div>
-          </div>
-          <!-- gallery2 -->
-          <div id="video-gallery2" class="video-gallery">
-            <p>Watch Later</p>
-            <div class="galleries2 gallery-div">
-              <!-- <img
-                src="https://cdn.pixabay.com/photo/2018/08/12/16/59/ara-3601194__340.jpg"
-                alt=""
-              />
-
-              <div class="scaled-icons hidden">
-                <div>
-                  <i class="fas fa-play"></i>
-                  <i class="fas fa-plus-circle"></i>
-                  <i class="far fa-thumbs-up"></i>
-                  <i class="far fa-thumbs-down"></i>
-                </div>
-                <div><i class="fas fa-chevron-down"></i></div>
-              </div> -->
-            </div>
-          </div>
-          <!-- gallery3 -->
-          <div id="video-gallery3" class="video-gallery">
-            <p>Comedy</p>
-            <div class="galleries3 gallery-div"></div>
-          </div>
-          <!-- gallery4 -->
-          <div id="video-gallery4" class="video-gallery">
-            <p>Top Lists</p>
-            <div class="galleries4 gallery-div"></div>
-          </div>
-          <!-- gallery5 -->
-          <div id="video-gallery5" class="video-gallery">
-            <p>Favorite Shows</p>
-            <div class="galleries5 gallery-div"></div>
-          </div>
+        <!-- gallery1 -->
+        <div id="video-gallery1" class="video-gallery">
+          <p>Trending Now</p>
+          <div class="galleries1 gallery-div"></div>
         </div>
+
+        <!-- gallery2 -->
+        <div id="video-gallery2" class="video-gallery">
+          <p>Watch Later</p>
+               <div class="galleries2 gallery-div"></div>
+          </div>
+      
+
+        <!-- gallery3 -->
+        <div id="video-gallery3" class="video-gallery">
+          <p>Comedy</p>
+          <div class="galleries3 gallery-div"></div>
+        </div>
+
+        <!-- gallery4 -->
+        <div id="video-gallery4" class="video-gallery">
+          <p>Top Lists</p>
+          <div class="galleries4 gallery-div"></div>
+        </div>
+
+        <!-- gallery5 -->
+        <div id="video-gallery5" class="video-gallery">
+          <p>Favorite Shows</p>
+          <div class="galleries5 gallery-div"></div>
+        </div>
+
+        <!-- overlay -->
       </section>
 
       <!-- modal class -->
       <div class="modal-container hidden">
+        <div class="modal-overlay"></div>
         <div class="modal">
-          <!-- <img class="modal-image" src="">
-                <div class="modal-content">
-                  <div class="modal-icons">
-                  <div>
-                  <i class="fas fa-play"></i>
-                  <i class="fas fa-plus-circle"></i>
-                  <i class="far fa-thumbs-up"></i>
-                  <i class="far fa-thumbs-down"></i>
-                  </div>
-                  <div><i class="fas fa-chevron-down"></i></div>
-                </div>
-                <div class="modal-overview"></div>
-                </div> -->
+          <div class="modal-image"></div>
+          <div class="modal-content">
+            <div class="modal-icons">
+              <div>
+                <i class="fas fa-play"></i>
+              </div>
+              <div><i class="fas fa-chevron-down"></i></div>
+            </div>
+            <div class="modal-overview"></div>
+          </div>
         </div>
       </div>
     </main>
 
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="./slick-1.8.1/slick/slick.min.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
+
+ 
