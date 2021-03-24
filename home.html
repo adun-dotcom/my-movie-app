@@ -11,44 +11,63 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
     />
     <link rel="stylesheet" href="home.css" />
-    <title>Movie App Home-page</title>
+    <title>Trailer App Home-page</title>
   </head>
   <body>
+    <!-- nav bar -->
     <nav>
-      <div>
-        <span><i class="fas fa-signal"></i> Media App</span>
-      </div>
-      <div>
+      <div class="open-btn"><i class="fas fa-bars"></i></div>
+        <span class="span-title"><i class="fas fa-video"></i> Trailer App</span>
+        <div class="login-div"><a href="index.html">Login</a></div>
         <form action="" id="form">
-          <input class="input" type="text" placeholder="search movies" />
+          <input class="input" type="text" placeholder="find movie trailers" />
           <i class="fas fa-search"></i>
         </form>
-      </div>
-      <div class="account-link">
-        <a href="#">Account Settings</a>
-      </div>
     </nav>
+    <!-- hidden menu -->
+     <div class="nav nav-black">
+      <div class="nav nav-red">
+        <div class="nav nav-white">
+          <button class="nav-btn close-btn">
+            <i class="fas fa-times"></i>
+          </button>
+      <div class="account-link">
+        <a href="/home.html">Home</a>
+        <a href="/home.html#video-gallery1">Trending Now</a>
+        <a href="">Watch Later</a>
+        <a href="">Comedy</a>
+        <a href="">Top-shows</a>
+        <a href="">Favorite Shows</a>
+      </div>
+      </div>
+      </div>
+      </div>
+<!-- search results -->
+    <div class="searching hidden"></div>
 
     <!-- main -->
-    <main>
-      <section class="showcase">
-        <video src="Pexels Videos 2169879 (1).mp4" autoplay muted loop></video>
-        <div class="overlay"></div>
-        <div class="text">
-          <h2>title</h2>
-          <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis
-            facilis obcaecati ab necessitatibus iste expedita nemo modi delectus
-            quasi ad?
-          </p>
-          <button class="play-btn"><i class="fas fa-play"></i> play</button>
-          <button class="more-btn">
-            <i class="fas fa-info-circle"></i> more info
-          </button>
-        </div>
+    <main id="home">
+      <section class="welcome">
+          <h1>Welcome.</h1>
+          <div class="starting">
+            <p>Millions of movie trailers, TV shows and people to discover. Explore now.</p>
+          </div>
+          
       </section>
+     <section class="movie-showcase">
+       <!-- showcase gallery -->
+        <div class="showcase-div">
+           <h3>Showcase</h3>
+        <div id="showcase" class="showcase-class">
+          <img src="https://www.themoviedb.org/t/p/w220_and_h330_face/bG5aqfT5lTHuSbcQofNHtH0RyyP.jpg" alt="">
+          <img src="https://www.themoviedb.org/t/p/w220_and_h330_face/6kbAMLteGO8yyewYau6bJ683sw7.jpg" alt="">
+          <img src="https://www.themoviedb.org/t/p/w220_and_h330_face/95xQPSqwvQDRoB3rXUn4lRyJrBW.jpg" alt="">
+          <img src="https://www.themoviedb.org/t/p/w220_and_h330_face/qTZIgXrBKURBK1KrsT7fe3qwtl9.jpg" alt="">
+          <img src="https://www.themoviedb.org/t/p/w220_and_h330_face/6hChiX0vIjWY4y2kz1WndHVMsDu.jpg" alt="">
+        </div>
+        </div>
       <!-- video gallery div -->
-      <section class="movie-showcase">
+      
         <!-- gallery1 -->
         <div id="video-gallery1" class="video-gallery">
           <p>Trending Now</p>
@@ -79,27 +98,18 @@
           <p>Favorite Shows</p>
           <div class="galleries5 gallery-div"></div>
         </div>
-
-        <!-- overlay -->
       </section>
-
-      <!-- modal class -->
-      <div class="modal-container hidden">
+    </main>
+     <!-- modal class -->
+    <div class="modal-container hidden">
         <div class="modal-overlay"></div>
         <div class="modal">
           <div class="modal-image"></div>
           <div class="modal-content">
-            <div class="modal-icons">
-              <div>
-                <i class="fas fa-play"></i>
-              </div>
-              <div><i class="fas fa-chevron-down"></i></div>
-            </div>
             <div class="modal-overview"></div>
           </div>
         </div>
       </div>
-    </main>
 
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script type="text/javascript" src="./slick-1.8.1/slick/slick.min.js"></script>

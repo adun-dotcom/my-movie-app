@@ -1,4 +1,6 @@
 // DOM ELEMENTS
+const showcaseImg =
+  'https://api.themoviedb.org/3/trending/all/day?api_key=62bbe343222b3551f9b15d712b4d6b68&page=1'
 const apiTrending =
   'https://api.themoviedb.org/3/discover/movie?primary_release_date.gte=2021-01-10&primary_release_date.lte=2021-02-22&api_key=62bbe343222b3551f9b15d712b4d6b68&page=1'
 const apiWatchLater =
@@ -8,9 +10,9 @@ const apiComedy =
 const apiTopLists =
   'https://api.themoviedb.org/3/discover/movie/?certification_country=US&certification=R&sort_by=vote_average.desc&api_key=62bbe343222b3551f9b15d712b4d6b68&page=1'
 const apiFavorite =
-  'https://api.themoviedb.org/3/discover/movie?with_genres=878&with_cast=500&sort_by=vote_average.desc&api_key=62bbe343222b3551f9b15d712b4d6b68&page=1'
-const SEARCH_URL =
-  'https://api.themoviedb.org/3/search/movie?api_key=62bbe343222b3551f9b15d712b4d6b68&query="'
+  'https://api.themoviedb.org/3/discover/movie?primary_release_year=2020&sort_by=vote_average.desc&api_key=62bbe343222b3551f9b15d712b4d6b68&page=1'
+  const searchUrl =
+    'https://api.themoviedb.org/3/search/movie?api_key=3fd2be6f0c70a2a598f084ddfb75487c&query="'
 const IMAGE_URL = 'https://image.tmdb.org/t/p/w1280'
 const form = document.querySelector('#form')
 const modalContainer = document.querySelector('.modal-container')
@@ -19,6 +21,9 @@ const modalImage = document.querySelector('.modal-image')
 const modalOverview = document.querySelector('.modal-overview')
 const overView = document.querySelector('.overview')
 const gallerydiv = document.querySelector('.gallery-div')
+const movieShowcase = document.querySelector('.movie-showcase')
+const search = document.querySelector('.input')
+const showcase = document.querySelector('.showcase')
 
 // FETCH MOVIE API
 const getMovies = async (url) => {
@@ -34,30 +39,25 @@ async function displayMovies1(api, selector) {
   try {
     let movieData = await getMovies(api)
 
-    document.querySelector(selector).innerHTML = ''
+    // document.querySelector(selector).innerHTML = ''
     movieData.forEach((movie, i) => {
       key = i
       const { poster_path, id } = movie
       const slider = document.createElement('div')
       slider.classList.add('movie-div')
       slider.innerHTML = `
-               <img class="img-${i} main-img" src="${IMAGE_URL + poster_path}" alt="">
-      
-      <div class="overview">
-        <div class="icon-text">          
-        Watch Trailer <i class="fas fa-play play" data-id="${id}"></i>
-      </div>
-      <img class="movie-img"  src='${IMAGE_URL + poster_path}' alt="">
-      </div>
-                    
-     
+                   <img class="img-${i} main-img" src="${
+        IMAGE_URL + poster_path
+      }" alt="">
+      <i class="fas fa-play play" data-id="${id}"></i>
         `
       document.querySelector(selector).append(slider)
     })
 
+    // SCROLL FUNCTION
     $(document).ready(function () {
       $('.gallery-div').slick({
-        slidesToShow: 10,
+        slidesToShow: 8,
         slidesToScroll: 5,
       })
     })
@@ -65,21 +65,48 @@ async function displayMovies1(api, selector) {
     console.log({ e })
   }
 }
-displayMovies1(apiTrending, '.galleries1')
+
+// CALLING THE DISPLAY MOVIE FUNCTION
+
+displayMovies1(showcaseImg, '.galleries1')
 displayMovies1(apiWatchLater, '.galleries2')
 displayMovies1(apiComedy, '.galleries3')
 displayMovies1(apiTopLists, '.galleries4')
 displayMovies1(apiFavorite, '.galleries5')
 
-// slide show
+// SEARCH MOVIES
+async function searchMovies(url) {
+  let movieData = await getMovies(url)
+  document.querySelector('.searching').innerHTML = ''
+  movieData.map((movie, i) => {
+      key = i
+      const { poster_path, id } = movie
+      const slider2 = document.createElement('div')
+      slider2.classList.add('movie-div')
+      slider2.innerHTML = `
+               <img class="img-${i} search-img" src="${
+        IMAGE_URL + poster_path
+      }" alt="">
+      <i class="fas fa-play play" data-id="${id}"></i>
+               
+        `
+      document.querySelector('.searching').append(slider2)
+})
+}
 
+// search event listener
 form.addEventListener('submit', (e) => {
   e.preventDefault()
-  const searchInput = document.querySelector('.input').value
-  if (searchInput && searchInput !== '') {
-    displayMovies1(SEARCH_URL + searchInput, '.gallery-div')
-    searchInput.value = ''
-  } else window.location.reload()
+    const searchTerm = search.value
+    console.log(searchTerm)
+    if(searchTerm && searchTerm !== '') {
+        searchMovies(searchUrl + searchTerm)
+        search.value = ''
+        document.querySelector('.searching').classList.remove('hidden')
+        document.querySelector('main').innerHTML = ''
+    } else {
+        window.location.reload()
+    }
 })
 
 // GET MOVIE TRAILERS
@@ -91,6 +118,7 @@ const getMovieVideos = async (id) => {
   return data.results
 }
 
+// modal container holding trailer
 document.onclick = async function (event) {
   try {
     const target = event.target
@@ -126,4 +154,17 @@ modalOverlay.addEventListener('click', () => {
     modalContainer.classList.add('hidden')
     modalImage.innerHTML = ''
   }
+})
+
+
+const open_btn = document.querySelector('.open-btn')
+const close_btn = document.querySelector('.close-btn')
+const nav = document.querySelectorAll('.nav')
+
+open_btn.addEventListener('click', () => {
+  nav.forEach((nav_el) => nav_el.classList.add('visible'))
+})
+
+close_btn.addEventListener('click', () => {
+  nav.forEach((nav_el) => nav_el.classList.remove('visible'))
 })
