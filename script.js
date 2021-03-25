@@ -61,7 +61,7 @@ async function displayMovies1(api, selector) {
     // SCROLL FUNCTION
     $(document).ready(function () {
       $('.gallery-div').slick({
-        slidesToShow: 7,
+        slidesToShow: 8,
         slidesToScroll: 5,
       })
     })
@@ -84,15 +84,17 @@ async function searchMovies(url) {
   document.querySelector('.searching').innerHTML = ''
   movieData.map((movie, i) => {
       key = i
-      const { poster_path, id } = movie
+      const { poster_path, id , name, title} = movie
       const slider2 = document.createElement('div')
       slider2.classList.add('movie-div')
       slider2.innerHTML = `
-               <img class="img-${i} search-img" src="${
+                      <img class="img-${i} main-img" src="${
         IMAGE_URL + poster_path
       }" alt="">
-      <i class="fas fa-play play" data-id="${id}"></i>
-               
+      <i class="far fa-play-circle play" data-id="${id}"></i>
+      <div class="img-title-div">
+      <p>${title ? title : name}</p>
+      </div>
         `
       document.querySelector('.searching').append(slider2)
 })
