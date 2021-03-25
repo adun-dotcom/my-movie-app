@@ -29,6 +29,7 @@ const showcase = document.querySelector('.showcase')
 const getMovies = async (url) => {
   const res = await fetch(url)
   const data = await res.json()
+  console.log(data.results)
   return data.results
 }
 
@@ -42,14 +43,17 @@ async function displayMovies1(api, selector) {
     // document.querySelector(selector).innerHTML = ''
     movieData.forEach((movie, i) => {
       key = i
-      const { poster_path, id } = movie
+      const { poster_path, id, title, name} = movie
       const slider = document.createElement('div')
       slider.classList.add('movie-div')
       slider.innerHTML = `
                    <img class="img-${i} main-img" src="${
         IMAGE_URL + poster_path
       }" alt="">
-      <i class="fas fa-play play" data-id="${id}"></i>
+      <i class="far fa-play-circle play" data-id="${id}"></i>
+      <div class="img-title-div">
+      <p>${title ? title: name}</p>
+      </div>
         `
       document.querySelector(selector).append(slider)
     })
@@ -57,7 +61,7 @@ async function displayMovies1(api, selector) {
     // SCROLL FUNCTION
     $(document).ready(function () {
       $('.gallery-div').slick({
-        slidesToShow: 8,
+        slidesToShow: 7,
         slidesToScroll: 5,
       })
     })
@@ -149,14 +153,19 @@ document.onclick = async function (event) {
   }
 }
 
-modalOverlay.addEventListener('click', () => {
+document.querySelector('.modal-close').addEventListener('click', () => {
   if (!modalContainer.classList.contains('hidden')) {
     modalContainer.classList.add('hidden')
     modalImage.innerHTML = ''
   }
 })
 
-
+modalContainer.addEventListener('click', () => {
+    if (!modalContainer.classList.contains('hidden')) {
+      modalContainer.classList.add('hidden')
+      modalImage.innerHTML = ''
+    }
+  })
 const open_btn = document.querySelector('.open-btn')
 const close_btn = document.querySelector('.close-btn')
 const nav = document.querySelectorAll('.nav')
