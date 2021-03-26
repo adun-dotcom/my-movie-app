@@ -54,7 +54,7 @@ header {
 }
 
 .span-title {
-  font-size: 2rem;
+   font-size: 20px;
   margin-left: 40px;
   color: rgb(223, 30, 30);
   text-shadow: 0 4px 4px rgb(83, 61, 67);
@@ -63,7 +63,7 @@ header {
 }
 
 .fa-video {
-  font-size: 1.5rem;
+  font-size: 10px;
 }
 
 /* .login-div {
@@ -431,13 +431,6 @@ input[type='text']::-webkit-input-placeholder {
   .slick-slide{
   margin: 20px 10px !important;
   width: 150px !important;
-}
-
-.searching {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  position: relative;
-  margin: 70px 20px;
 }
 }
 
