@@ -1,67 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
-    />
-    <title>Movie App</title>
-  </head>
-  <body>
-      
-    <main>
-      <h1 id="movie-app">MOVIE APP</h1>
-        <div class="container-div">
-          <h1>Sign In</h1>
-          <form action="" id="form">
-            <input type="email" required placeholder="Email or phone number" />
-            <input type="password" required placeholder="Password" />
-            <button class="btn"><a href="home.html">Sign In</a></button>
-          </form>
-          <div class="help-text">
-            <span><i class="far fa-square"></i> Remember me</span>
-            <span>Need help?</span>
-          </div>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+</head>
+<body>
+    <header>
+          <span class="span-title"><i class="fas fa-video"></i> Trailer App</span>
+    </header>
+    <div class="form">
+        <img src="/image/user-svgrepo-com.svg" alt="">
 
-          <div class="login-text">
-            <img
-                src="https://d2v9ipibika81v.cloudfront.net/uploads/sites/261/2017/01/facebook-logo-3.png"
-                alt=""
-              />
-              <small
-              >Login with Facebook</small
-            >
-          </div>
-          <p class="signup-text">New to Movie-App? <span>Signup now</span></p>
-          <p class="learnmore-text">This page is protected by Google reCAPTCHA to ensure you're not a bot. <a href="#">Learn more.</a> </p>
-        </div>
-      
-    </main>
-    <!-- footer -->
-    <footer>
-        <div class="footer-div">
-           <p>Questions? Contact us</p>
-           <div class="footer-flex">
-               <div>
-                   <ul>
-                       <li>FAQ</li>
-                       <li>Cookie Preferences</li>
-                   </ul>
-               </div>
-               <div>
-                   <ul>
-                       <li>Help Center</li>
-                       <li>Corporate Information</li>
-                   </ul>
-               </div>
-               <div>Terms of use</div>
-               <div>Privacy</div>
-           </div>
-        </div>
-    </footer>
-  </body>
+            <h2>Sign in here</h2>
+            <form class="login"></form>
+            <div class="input-box">
+                <i class="fas fa-user"></i>
+                <input class="email" type="email" placeholder="email" required>
+                <span class="error-email"></span>
+            </div>
+
+            <div class="input-box">
+                <i class="fas fa-unlock" onclick=" passwordReveal()"></i>
+                <i class="fas fa-lock hidden" onclick=" passwordReveal()"></i>
+                <input class="password" type="password" placeholder="password" required>
+                <span class="error-password"></span>
+            </div>
+            <div class="input-box">
+                    <button class="submit">Login</button>
+            </div>
+            <a href="" class="forgot">forgot password?</a>
+        </form>
+         
+    </div>
+
+<script src="script.js"></script>
+</body>
 </html>
