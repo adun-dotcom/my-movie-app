@@ -1,10 +1,10 @@
 // DOM ELEMENTS
-const showcaseImg =
+const trendingApi =
   'https://api.themoviedb.org/3/trending/all/day?api_key=62bbe343222b3551f9b15d712b4d6b68&page=1'
 const apiTrending =
   'https://api.themoviedb.org/3/discover/movie?primary_release_date.gte=2021-01-10&primary_release_date.lte=2021-02-22&api_key=62bbe343222b3551f9b15d712b4d6b68&page=1'
-const apiWatchLater =
-  'https://api.themoviedb.org/3/discover/movie?certification_country=US&certification=R&sort_by=revenue.desc&with_cast=3896&api_key=62bbe343222b3551f9b15d712b4d6b68&page=1'
+const popularApi =
+  'https://api.themoviedb.org/3/movie/popular?api_key=62bbe343222b3551f9b15d712b4d6b68&language=en-US&page=1'
 const apiComedy =
   'https://api.themoviedb.org/3/discover/movie?with_genres=35&with_cast=23659&sort_by=revenue.desc&api_key=62bbe343222b3551f9b15d712b4d6b68&page=1'
 const apiTopLists =
@@ -72,8 +72,8 @@ async function displayMovies1(api, selector) {
 
 // CALLING THE DISPLAY MOVIE FUNCTION
 
-displayMovies1(showcaseImg, '.galleries1')
-displayMovies1(apiWatchLater, '.galleries2')
+displayMovies1(trendingApi, '.galleries1')
+displayMovies1(popularApi, '.galleries2')
 displayMovies1(apiComedy, '.galleries3')
 displayMovies1(apiTopLists, '.galleries4')
 displayMovies1(apiFavorite, '.galleries5')
@@ -136,6 +136,7 @@ document.onclick = async function (event) {
         loading...
         </p>
         `
+
       const data = await getMovieVideos(movieID)
 
       if (data.length) {
@@ -168,14 +169,50 @@ modalContainer.addEventListener('click', () => {
       modalImage.innerHTML = ''
     }
   })
-const open_btn = document.querySelector('.open-btn')
-const close_btn = document.querySelector('.close-btn')
-const nav = document.querySelectorAll('.nav')
 
-open_btn.addEventListener('click', () => {
-  nav.forEach((nav_el) => nav_el.classList.add('visible'))
-})
 
-close_btn.addEventListener('click', () => {
-  nav.forEach((nav_el) => nav_el.classList.remove('visible'))
-})
+ 
+// const open_btn = document.querySelector('.open-btn')
+// const close_btn = document.querySelector('.close-btn')
+// const nav = document.querySelectorAll('.nav')
+
+// open_btn.addEventListener('click', () => {
+//   nav.forEach((nav_el) => nav_el.classList.add('visible'))
+// })
+
+// close_btn.addEventListener('click', () => {
+//   nav.forEach((nav_el) => nav_el.classList.remove('visible'))
+// })
+
+// swiper
+ var swiper = new Swiper('.swiper-container', {
+   effect: 'coverflow',
+   grabCursor: true,
+   centeredSlides: true,
+   slidesPerView: 'auto',
+   coverflowEffect: {
+     rotate: 20,
+     stretch: 0,
+     depth: 200,
+     modifier: 1,
+     slideShadows: true,
+   },
+   loop: true,
+   autoplay: {
+     delay: 500,
+     disableOnInteraction: false,
+   },
+ })
+
+// function to hide or show menu toggle
+const menuList = document.querySelectorAll('.nav')
+ const menuToggle = document.querySelector('.menu-toggle')
+ menuToggle.addEventListener('click', ()=>{
+   if (!menuToggle.classList.contains('active')) {
+    menuToggle.classList.add('active')
+     menuList.forEach(menu=> {menu.classList.add('visible')})
+   } else{
+     menuToggle.classList.remove('active')
+     menuList.forEach(menu=> {menu.classList.remove('visible')})
+   }
+   })

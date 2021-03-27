@@ -5,78 +5,87 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="./slick-1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <link rel="stylesheet" href="./slick-1.8.1/slick/slick-theme.css">
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
     />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link rel="stylesheet" href="home.css" />
     <title>Trailer App Home-page</title>
   </head>
   <body>
     <!-- nav bar -->
     <header>
-      <div class="open-btn"><i class="fas fa-bars"></i></div>
+      <div class="menu-toggle"></div>
+       <div class="nav nav-black">
+      <div class="nav nav-red">
+        <div class="nav nav-white">
+      <div class="account-link">
+        <li><a href="/home.html">Home</a></li>
+        <li><a href="/home.html#video-gallery1">Latest Trailers</a></li>
+        <li><a href="/home.html#video-gallery2">Popular</a></li>
+        <li><a href="/home.html#video-gallery3">Comedy</a></li>
+        <li><a href="/home.html#video-gallery4">Top Lists</a></li>
+        <li><a href="/home.html#video-gallery5">Action</a></li>
+         <li><a class="sign-out" href="index.html">Sign Out</a></li>
+      </div>
+      </div>
+      </div>
+      </div>
+
         <span class="span-title"><i class="fas fa-video"></i> Trailer App</span>
         <form id="form" class="search">
           <input class="input" type="text" placeholder="find movie trailers" />
           <i class="fas fa-search"></i>
         </form>
     </header>
-    <!-- hidden menu -->
-     <div class="nav nav-black">
-      <div class="nav nav-red">
-        <div class="nav nav-white">
-          <button class="nav-btn close-btn">
-            <i class="fas fa-times"></i>
-          </button>
-      <div class="account-link">
-        <a href="/home.html">Home</a>
-        <a href="/home.html#video-gallery1">Trending Now</a>
-        <a href="">Watch Later</a>
-        <a href="">Comedy</a>
-        <a href="">Top-shows</a>
-        <a href="">Favorite Shows</a>
-         <a href="index.html">Sign in</a>
-      </div>
-      </div>
-      </div>
-      </div>
-<!-- search results -->
+   
+<!-- container for search results -->
     <div class="searching hidden"></div>
 
     <!-- main -->
     <main id="home">
       <section class="welcome">
-          <h1>Welcome.</h1>
+        <div class="welcome-text">
+           <h1>Welcome...</h1>
           <div class="starting">
-            <p>Millions of movie trailers, TV shows and people to discover. Explore now.</p>
+            <p>Countless lists of movie trailers to watch in high quality. Explore now.</p>
           </div>
-          
-      </section>
-     <section class="movie-showcase">
-       <!-- showcase gallery -->
-        <div class="showcase-div">
-           <h3>Showcase</h3>
-        <div id="showcase" class="showcase-class">
-          <img src="https://www.themoviedb.org/t/p/w220_and_h330_face/bG5aqfT5lTHuSbcQofNHtH0RyyP.jpg" alt="">
-          <img src="https://www.themoviedb.org/t/p/w220_and_h330_face/6kbAMLteGO8yyewYau6bJ683sw7.jpg" alt="">
-          <img src="https://www.themoviedb.org/t/p/w220_and_h330_face/95xQPSqwvQDRoB3rXUn4lRyJrBW.jpg" alt="">
-          <img src="https://www.themoviedb.org/t/p/w220_and_h330_face/qTZIgXrBKURBK1KrsT7fe3qwtl9.jpg" alt="">
-          <img src="https://www.themoviedb.org/t/p/w220_and_h330_face/6hChiX0vIjWY4y2kz1WndHVMsDu.jpg" alt="">
         </div>
-        </div>
+         
+          <!-- swiper container -->
+        <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <img src="https://www.themoviedb.org/t/p/w220_and_h330_face/lJA2RCMfsWoskqlQhXPSLFQGXEJ.jpg" alt="">
+      </div>
+      <div class="swiper-slide"> <img src="https://www.themoviedb.org/t/p/w220_and_h330_face/wRbjVBdDo5qHAEOVYoMWpM58FSA.jpg" alt=""></div>
+      <div class="swiper-slide"> <img src="https://www.themoviedb.org/t/p/w220_and_h330_face/rqeYMLryjcawh2JeRpCVUDXYM5b.jpg" alt=""></div>
+      <div class="swiper-slide"> <img src="https://www.themoviedb.org/t/p/w220_and_h330_face/wKTAz8fkoXJoHqPpi4ArAUGDtco.jpg" alt=""></div>
+      <div class="swiper-slide"> <img src="https://www.themoviedb.org/t/p/w220_and_h330_face/6AccYL0eb7uzHn98IKaNjvJbyuA.jpg" alt=""></div>
+      <div class="swiper-slide"> <img src="https://www.themoviedb.org/t/p/w220_and_h330_face/aiy35Evcofzl7hASZZvsFgltHTX.jpg" alt=""></div>
+      <div class="swiper-slide"> <img src="https://www.themoviedb.org/t/p/w220_and_h330_face/xjyEpcuDbB1jy0ehNQMBiO8KOdr.jpg" alt=""></div>
+      <div class="swiper-slide"> <img src="https://www.themoviedb.org/t/p/w220_and_h330_face/6hChiX0vIjWY4y2kz1WndHVMsDu.jpg" alt=""></div>
+      <div class="swiper-slide"> <img src="https://www.themoviedb.org/t/p/w220_and_h330_face/2IWouZK4gkgHhJa3oyYuSWfSqbG.jpg" alt=""></div>
+      <div class="swiper-slide"> <img src="https://www.themoviedb.org/t/p/w220_and_h330_face/2zAogx9dmSAu2HYxbWzHe4ZaNY5.jpg" alt=""></div>
+    </div>
+    <!-- Add Pagination -->
+    <div class="swiper-pagination"></div>
+  </div>
+   </section>
       <!-- video gallery div -->
-      
+      <section class="movie-showcase">
         <!-- gallery1 -->
         <div id="video-gallery1" class="video-gallery">
-          <p>Trending </p>
+          <p>Latest Trailers </p>
           <div class="galleries1 gallery-div"></div>
         </div>
 
         <!-- gallery2 -->
         <div id="video-gallery2" class="video-gallery">
-          <p>What's Popular</p>
+          <p>Popular</p>
                <div class="galleries2 gallery-div"></div>
           </div>
       
@@ -95,7 +104,7 @@
 
         <!-- gallery5 -->
         <div id="video-gallery5" class="video-gallery">
-          <p>Favorite Shows</p>
+          <p>Action</p>
           <div class="galleries5 gallery-div"></div>
         </div>
       </section>
@@ -106,10 +115,20 @@
         <i class="fas fa-times modal-close"></i>
     </div>
          
+    <!-- footer -->
+    <footer>
+      <div class="footer-div">
+        <span class="span-title"><i class="fas fa-video"></i> Trailer App</span>
+        <h4><em>~Adunola's Capstone Project</em> </h4>
+      </div>
+    </footer>
             
           
-       
-
+       <script
+  src="https://code.jquery.com/jquery-3.6.0.js"
+  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+  crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script type="text/javascript" src="./slick-1.8.1/slick/slick.min.js"></script>
     <script src="home.js"></script>
