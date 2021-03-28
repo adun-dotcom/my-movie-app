@@ -43,17 +43,14 @@ async function displayMovies1(api, selector) {
     // document.querySelector(selector).innerHTML = ''
     movieData.forEach((movie, i) => {
       key = i
-      const { poster_path, id, title, name} = movie
+      const { poster_path, id} = movie
       const slider = document.createElement('div')
       slider.classList.add('movie-div')
       slider.innerHTML = `
                    <img class="img-${i} main-img" src="${
         IMAGE_URL + poster_path
       }" alt="">
-      <i class="far fa-play-circle play" data-id="${id}"></i>
-      <div class="img-title-div">
-      <p>${title ? title: name}</p>
-      </div>
+       <i class="fas fa-play play" data-id="${id}"></i>
         `
       document.querySelector(selector).append(slider)
     })
@@ -84,17 +81,14 @@ async function searchMovies(url) {
   document.querySelector('.searching').innerHTML = ''
   movieData.map((movie, i) => {
       key = i
-      const { poster_path, id , name, title} = movie
+      const { poster_path, id } = movie
       const slider2 = document.createElement('div')
-      slider2.classList.add('movie-div')
+      slider2.classList.add('search-div')
       slider2.innerHTML = `
-                      <img class="img-${i} main-img" src="${
+               <img class="img-${i} search-img" src="${
         IMAGE_URL + poster_path
       }" alt="">
-      <i class="far fa-play-circle play" data-id="${id}"></i>
-      <div class="img-title-div">
-      <p>${title ? title : name}</p>
-      </div>
+       <i class="fas fa-play play" data-id="${id}"></i>
         `
       document.querySelector('.searching').append(slider2)
 })
@@ -163,12 +157,12 @@ document.querySelector('.modal-close').addEventListener('click', () => {
   }
 })
 
-modalContainer.addEventListener('click', () => {
-    if (!modalContainer.classList.contains('hidden')) {
-      modalContainer.classList.add('hidden')
-      modalImage.innerHTML = ''
-    }
-  })
+// modalContainer.addEventListener('click', () => {
+//     if (!modalContainer.classList.contains('hidden')) {
+//       modalContainer.classList.add('hidden')
+//       modalImage.innerHTML = ''
+//     }
+//   })
 
 
  
@@ -199,7 +193,7 @@ modalContainer.addEventListener('click', () => {
    },
    loop: true,
    autoplay: {
-     delay: 500,
+     delay: 3000,
      disableOnInteraction: false,
    },
  })
