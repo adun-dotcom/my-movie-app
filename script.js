@@ -9,21 +9,28 @@ const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0
 // button validation
 login.addEventListener('click', (event) => {
   event.preventDefault()
-  valid()
-  storeStorage()
+  
+  let formData = {
+    username: username.value,
+    email: email.value,
+    password: password.value
+  }
+  localStorage.setItem('formData', JSON.stringify(formData))
+  console.log(localStorage.getItem('formData'))
 })
 
-const userText = document.querySelector('.username-value')
-var storeUser; 
-username.addEventListener('input', letter=>{
-  storeUser = letter.target.value
-  localStorage.setItem('username', storeUser)
-})
-var storeEmail
-email.addEventListener('input', (letter) => {
-  storeEmail = letter.target.value
-  localStorage.setItem('email', storeEmail)
-})
+// const userText = document.querySelector('.username-value')
+// var storeUser; 
+// username.addEventListener('input', letter=>{
+//   storeUser = letter.target.value
+//   localStorage.setItem('username', storeUser)
+// })
+// var storeEmail
+// email.addEventListener('input', (letter) => {
+//   storeEmail = letter.target.value
+//   localStorage.setItem('email', storeEmail)
+// })
+
 
 // const storeStorage = ()=>{
 //   localStorage.setItem('userUsername', email.value)
