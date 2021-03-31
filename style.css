@@ -1,24 +1,29 @@
 *{
+    margin: 0;
+    padding: 0;
 box-sizing: border-box;
 }
 body{
-    margin: 0;
-    padding: 0;
-    background-image: linear-gradient(to top, #0a0000e6, rgba(14, 9, 9, 0.8)),
+     background-image: linear-gradient(to top, #0a0000e6, rgba(14, 9, 9, 0.8)),
     url('https://assets.nflxext.com/ffe/siteui/vlv3/e178a4e7-4f52-4661-b2ae-41efa25dca7c/937435c1-c5b7-4cd1-bf62-62ba5d30ef47/NG-en-20210222-popsignuptwoweeks-perspective_alpha_website_small.jpg');
-  background-position: center;
-  background-repeat: no-repeat;
+   background-position: center;
+   background-repeat: no-repeat;
   background-size: cover;
-  background-attachment: fixed;
-  height: 100vh;
-  width: 100vw;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-y: visible;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
     'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji',
     'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 }
 /* header */
 header {
-  position: fixed;
+    position: fixed;
+    top: 0;
+    text-align: center;
   background: #0f0e0e;
   width: 100%;
   padding: 20px;
@@ -37,19 +42,60 @@ header {
   font-size: 10px;
 }
 
+span{font-size: 12px;}
 /* form */
-.form{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 350px;
-    min-height: 200px;
+
+.form-bx{
+    position: relative;
+    margin-top: 50px;
+    width: 550px;
+    height: 550px;
     background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.5);
-    padding: 50px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 3px 0 rgb(117 124 129 / 12%);
+    padding:  0;
+    overflow: hidden;
 }
+
+.button-bx{
+    width: 100%;
+    margin:  0;
+    position: relative;
+    border-radius: 5px;
+    display: flex;
+}
+
+
+
+#btn{
+    position: absolute;
+    top: 0;
+    margin: 0;
+    width: 50%;
+    height: 100%;
+    border-radius: 0 0 5px 0;
+    border: 1px solid #c8cdd2;
+    background-color:#f9f9fa;
+}
+
+.toggle-btn {
+   flex: auto;
+    padding: 1rem;
+    text-align: center;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    outline: none;
+    position: relative;
+    width: 250px;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #657482;
+    letter-spacing: 1px;
+    font-size: 14px;
+    
+}
+
 
 .form img{
     width: 70px;
@@ -58,19 +104,36 @@ header {
     display: block;
 }
 
-.form h2{
-    color: rgb(17, 16, 16);
-    padding: 0;
-    margin: 0 0 20px;
-   text-align: center;
+.form-group h1{
+    font-size: 2.5rem;
+    font-weight: 300;
+    line-height: 4rem;
+    max-width: 50rem;
+    text-align: center;
 }
 
-.form .input-box{
+.form-group{
+    position: absolute;
+    top: 40px;
+    width: 100%;
+    transition: 0.5s;
+    padding: 0 30px;
+    margin: 30px 0;
+}
+
+#sign-in{
+    left: 0;
+}
+
+#sign-up{
+    left: 100%;
+}
+.form-group .input-box{
     position: relative;
     margin: 20px 0;
 }
 
-.form .input-box input{
+.form-group .input-box input{
     width: 100%;
     font-size: 16px;
     border: none;
@@ -86,12 +149,12 @@ header {
     visibility: hidden;
 }
 
-.form .input-box input:focus
+.form-group .input-box input:focus
 {
-    border-bottom: 2px solid rgb(223, 30, 30);
+    border-bottom: 3px solid rgb(223, 30, 30);
 }
 
-.form .input-box .fas{
+.form-group .input-box .fas{
     position: absolute;
     top: 8px;
     left: 0;
@@ -99,42 +162,96 @@ header {
     color: #777;
 }
 
+.form-group .btn-box{
+    text-align: center;
+}
 
-.form .input-box .submit{
+.form-group .btn-box .submit{
     border: none;
-    border-radius: 20px;
-    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+   box-shadow: 0 0 8px 0 rgb(17 22 26 / 16%), 0 4px 8px 0 rgb(17 22 26 / 8%), 0 8px 16px 0 rgb(17 22 26 / 8%);
     transition: 0.5s;
     background-color: rgb(12, 4, 4);
     cursor: pointer;
-    margin-top: 10px;
-    width: 100%;
+    margin-top: 20px;
+    width: 150px;
     height: 40px;
+     font-weight: 600;
     color: #fff;
-    font-size: 1rem;
-    letter-spacing: 0.3em;
+    letter-spacing: 1.5px;
+    line-height: 1.5rem;
+    font-size: 14px;
+    text-transform: uppercase;
     outline: none;
 }
 
-.form .input-box .submit:hover{
-    background-color: rgb(223, 30, 30);
+.form-group .btn-box .submit:hover{
+    box-shadow: 0 0 8px 8px  rgb(17 22 26 / 16%), 0 8px 16px 0 rgb(17 22 26 / 8%), 0 16px 32px 0 rgb(17 22 26 / 8%);
 }
 
-
-.form .forgot{
-    text-decoration: none;
-    color: #777;
+.form-group .forgot{
+    display: block;
     margin-top: 20px;
-    font-weight: bold;
+}
+
+.form-group .app-link{
+    font-weight: 600;
+    text-decoration: none;
+    color: rgb(223, 30, 30);
     font-size: 14px;
     text-align: center;
-    display: block;
     transition: 0.5s;
 }
 
-.form a:hover{
-    color: rgb(223, 30, 30);
+
+.or-separator{
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
+hr{
+    width: 100%;
+    height: 1px;
+    background-color: #f9f9fa;
+    border: none;
+    border-bottom: 1px solid hsla(0,0%,100%,.3);
+    border-top: 1px solid rgba(0,7,9,.1);
+    margin: 20px 0;
 
-/* footer */
+}
+
+/* media query */
+@media (max-width:1029px){
+    
+    .form-bx{
+        width: 100%;
+        margin-top: 180px;
+        height: 100vh;
+        border-radius: 0px;
+    }
+}
+
+@media (max-width:991px){
+    body{
+        display: block;
+    }
+
+    .container{
+        padding: 0 30px;
+    }
+    
+    .form-bx{
+        margin-top: 90px;
+    }
+}
+
+@media (max-width:460px){
+
+    .container{
+        padding: 0 10px;
+    }
+
+    
+}

@@ -12,13 +12,25 @@
     <header>
           <span class="span-title"><i class="fas fa-video"></i> Trailer App</span>
     </header>
-    <div class="form">
-        <img src="/image/user-svgrepo-com.svg" alt="">
 
-            <h2>Sign in here</h2>
-            <form class="login"></form>
-            <div class="input-box">
+    <section>
+        <div class="container">
+        <div class="form-bx">
+            <div class="button-bx">
+                <div id="btn"></div>
+                <button type="button" class="toggle-btn" onclick="createAcct()">Sign up</button>
+                <button type="button" class="toggle-btn" onclick="enterAcct()">Sign in</button>
+            </div>
+            <!-- sign in -->
+            <form id="sign-in" class="form-group">
+                <h1>Sign in to your account</h1>
+                <div class="input-box">
                 <i class="fas fa-user"></i>
+                <input class="username" type="text" placeholder="Username" required>
+                
+            </div>
+            <div class="input-box">
+                <i class="fas fa-envelope"></i>
                 <input class="email" type="email" placeholder="email" required>
                 <span class="error-email"></span>
             </div>
@@ -29,14 +41,45 @@
                 <input class="password" type="password" placeholder="password" required>
                 <span class="error-password"></span>
             </div>
-            <div class="input-box">
-                    <button class="submit">Login</button>
+            <div class="btn-box">
+                    <button class="submit">Sign in</button>
             </div>
-            <a href="" class="forgot">forgot password?</a>
-        </form>
-         
-    </div>
+            <a href="" class="forgot app-link">Forgot your password?</a>
+            <div class="or-separator">
+                <hr class="line">
+                <hr class="line">
+            </div>
+            </form>
+            <!-- sign  up -->
+             <form id="sign-up" class="form-group">
+                <h1>Create your account</h1>
+                <div class="input-box">
+                     <input type="text" placeholder="First Name" required>
+                </div>
+                <div class="input-box">
+                    
+                <input type="text" placeholder="Last Name" required>
+                </div>
+                <div class="input-box">
+                <input class="email" type="email" placeholder="email" required>
+            </div>
 
+            <div class="input-box">
+                <i class="fas fa-unlock" onclick=" passwordReveal()"></i>
+                <i class="fas fa-lock hidden" onclick=" passwordReveal()"></i>
+                <input class="password" type="password" placeholder="password" required>
+            </div>
+            <small>By clicking Sign Up, you agree to our <a href="" class="app-link"> our Terms of Use </a> and <a href="" class="app-link"> our Privacy Policy.</a></small>
+            
+            <div class="btn-box">
+                    <button class="submit">Sign Up</button>
+            </div>
+           
+            </form>
+             </div>
+    </div>
+    </section>
+    
 <script src="script.js"></script>
 </body>
 </html>
