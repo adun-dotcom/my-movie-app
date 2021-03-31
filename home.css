@@ -124,6 +124,16 @@ input[type='text']::-webkit-input-placeholder {
   color: #fff;
 }
 
+.account-bx{
+  margin-left: 15px;
+}
+
+.account-bx img{
+  max-width: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
 /* hide/reveal list items */
 .menu-toggle{
   display: block;
