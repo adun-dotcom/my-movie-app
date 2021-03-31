@@ -27,10 +27,14 @@ const showcase = document.querySelector('.showcase')
 
 // FETCH MOVIE API
 const getMovies = async (url) => {
-  const res = await fetch(url)
-  const data = await res.json()
-  console.log(data.results)
-  return data.results
+  try {
+    const res = await fetch(url)
+    const data = await res.json()
+    console.log(data.results)
+    return data.results
+  } catch (e) {
+    console.log({ e })
+  }
 }
 
 // GET MOVIE Fectch
@@ -43,14 +47,28 @@ async function displayMovies1(api, selector) {
     // document.querySelector(selector).innerHTML = ''
     movieData.forEach((movie, i) => {
       key = i
-      const { poster_path, id} = movie
+      const {
+        poster_path,
+        id,
+        title,
+        name,
+        release_date,
+        vote_average,
+        first_air_date,
+      } = movie
       const slider = document.createElement('div')
       slider.classList.add('movie-div')
       slider.innerHTML = `
                    <img class="img-${i} main-img" src="${
         IMAGE_URL + poster_path
       }" alt="">
+      
        <i class="fas fa-play play" data-id="${id}"></i>
+       <div class="img-overview">
+       <div>${vote_average}</div>
+   <h4>${title ? title : name}</h4>
+   <small>${release_date ? release_date : first_air_date}</small>
+ </div>
         `
       document.querySelector(selector).append(slider)
     })
@@ -58,7 +76,7 @@ async function displayMovies1(api, selector) {
     // SCROLL FUNCTION
     $(document).ready(function () {
       $('.gallery-div').slick({
-        slidesToShow: 8,
+        slidesToShow: 6,
         slidesToScroll: 5,
       })
     })
@@ -77,11 +95,20 @@ displayMovies1(apiFavorite, '.galleries5')
 
 // SEARCH MOVIES
 async function searchMovies(url) {
-  let movieData = await getMovies(url)
-  document.querySelector('.searching').innerHTML = ''
-  movieData.map((movie, i) => {
+  try {
+    let movieData = await getMovies(url)
+    document.querySelector('.searching').innerHTML = ''
+    movieData.map((movie, i) => {
       key = i
-      const { poster_path, id } = movie
+      const {
+        poster_path,
+        id,
+        title,
+        name,
+        release_date,
+        vote_average,
+        first_air_date,
+      } = movie
       const slider2 = document.createElement('div')
       slider2.classList.add('search-div')
       slider2.innerHTML = `
@@ -89,33 +116,44 @@ async function searchMovies(url) {
         IMAGE_URL + poster_path
       }" alt="">
        <i class="fas fa-play play" data-id="${id}"></i>
-        `
+        <div class="img-overview">
+       <div>${vote_average}</div>
+   <h4>${title ? title : name}</h4>
+   <small>${release_date ? release_date : first_air_date}</small>
+ </div>
+      `
       document.querySelector('.searching').append(slider2)
-})
+    })
+  } catch (e) {
+    console.log({ e })
+  }
 }
 
 // search event listener
-form.addEventListener('submit', (e) => {
+form.addEventListener('keyup', (e) => {
   e.preventDefault()
     const searchTerm = search.value
-    console.log(searchTerm)
     if(searchTerm && searchTerm !== '') {
         searchMovies(searchUrl + searchTerm)
-        search.value = ''
+        search.value = search.value
         document.querySelector('.searching').classList.remove('hidden')
         document.querySelector('main').innerHTML = ''
     } else {
-        window.location.reload()
+        return
     }
 })
 
 // GET MOVIE TRAILERS
 const getMovieVideos = async (id) => {
-  const res = await fetch(
-    `https://api.themoviedb.org/3/movie/${id}/videos?api_key=62bbe343222b3551f9b15d712b4d6b68`
-  )
-  const data = await res.json()
-  return data.results
+  try {
+    const res = await fetch(
+      `https://api.themoviedb.org/3/movie/${id}/videos?api_key=62bbe343222b3551f9b15d712b4d6b68`
+    )
+    const data = await res.json()
+    return data.results
+  } catch (e) {
+    console.log({ e })
+  }
 }
 
 // modal container holding trailer
@@ -138,7 +176,8 @@ document.onclick = async function (event) {
         const { key } = data[0]
         modalImage.innerHTML = `
         <iframe width="100%" height="100%" src="https://www.youtube.com/embed/${key}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <p>
+        
+
         `
       } else {
         modalContainer.classList.add('hidden')
@@ -146,7 +185,6 @@ document.onclick = async function (event) {
     }
   } catch (e) {
     modalContainer.classList.add('hidden')
-    console.log({ e })
   }
 }
 
@@ -157,29 +195,16 @@ document.querySelector('.modal-close').addEventListener('click', () => {
   }
 })
 
-// modalContainer.addEventListener('click', () => {
-//     if (!modalContainer.classList.contains('hidden')) {
-//       modalContainer.classList.add('hidden')
-//       modalImage.innerHTML = ''
-//     }
-//   })
+modalContainer.addEventListener('click', () => {
+    if (!modalContainer.classList.contains('hidden')) {
+      modalContainer.classList.add('hidden')
+      modalImage.innerHTML = ''
+    }
+  })
 
-
- 
-// const open_btn = document.querySelector('.open-btn')
-// const close_btn = document.querySelector('.close-btn')
-// const nav = document.querySelectorAll('.nav')
-
-// open_btn.addEventListener('click', () => {
-//   nav.forEach((nav_el) => nav_el.classList.add('visible'))
-// })
-
-// close_btn.addEventListener('click', () => {
-//   nav.forEach((nav_el) => nav_el.classList.remove('visible'))
-// })
-
-// swiper
- var swiper = new Swiper('.swiper-container', {
+// swiper showcase j-query
+$(document).ready(
+ new Swiper('.swiper-container', {
    effect: 'coverflow',
    grabCursor: true,
    centeredSlides: true,
@@ -196,7 +221,8 @@ document.querySelector('.modal-close').addEventListener('click', () => {
      delay: 3000,
      disableOnInteraction: false,
    },
- })
+ }))
+
 
 // function to hide or show menu toggle
 const menuList = document.querySelectorAll('.nav')

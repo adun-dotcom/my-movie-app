@@ -275,18 +275,18 @@ main{
   left: 0;
   font-size: 3.7rem;
   display: block;
-  
   padding: 30px 100px;
-    }
-    .swiper-slide {
-      background-position: center;
-      background-size: cover;
-      width: 300px;
-      height: 300px;
-      -webkit-box-reflect: below 1px linear-gradient(transparent, transparent, #0006);
-    }
+ }
 
-    /*  */
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 300px;
+  height: 300px;
+  -webkit-box-reflect: below 1px linear-gradient(transparent, transparent, #0006);
+}
+
+    /*  movie gallery*/
 .movie-showcase {
   height: auto;
   position: relative;
@@ -319,22 +319,35 @@ main{
   position: relative;
   margin: 0 10px !important;
   transition: 0.5s !important;
-  width: 300px;
-  height: 200px;
-  z-index: -4;
-  overflow: hidden;
-  
+  height: 300px;
 }
 
-.movie-div:hover{
-  background-color:#f00 ;
+.img-overview{
+  position: absolute;
+  bottom: 0;
+  height: 30%;
+  background-color: #0f0e0e;
+  box-shadow: 0 25px 40px rgba(0,0,0,.5);
+  z-index: 34445;
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 0 0 5px 5px;
+}
+.movie-div:hover,
+.search-div:hover {
   transform: scale(1.25) ;
   box-shadow: 0 25px 40px rgba(0,0,0,.5);
-  /* background: linear-gradient(180deg, #f00, #000); */
+  background: linear-gradient(180deg, #f00, #000);
+  mix-blend-mode: multiply;
 }
 
-.fa-play
-{
+.movie-div:hover .main-img,
+.search-div:hover .search-img{
+  opacity:.3 ;
+}
+
+.fa-play {
    transition: 0.5s;
   position: absolute;
   top: 50%;
@@ -344,22 +357,24 @@ main{
   text-transform: uppercase;
   transition: 0.5s;
   color: #fff;
-  
-}
-.movie-div:hover .fa-play{
-  transform: translateY(0);
-  transition-delay: 0.4s;
+  opacity: 0;
 }
 
+.movie-div:hover .fa-play,
+.search-div:hover .fa-play{
+  transform: translateY(0);
+  transition-delay: 0.2s;
+  opacity: .9;
+}
 
 .main-img {
   width: 100%;
-  height: 100%;
+  height: 70%;
   object-fit: cover;
   position: absolute;
   top: 0;
   left: 0;
-  border-radius: 5px;
+  border-radius: 5px 5px 0 0;
 }
 
 /* search div */
@@ -367,11 +382,11 @@ main{
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   position: relative;
-  
   width: 100%;
   margin: 50px auto;
   padding:20px 40px;
   overflow: visible;
+  z-index: 9000;
 }
 
 .searching.hidden {
@@ -383,24 +398,10 @@ main{
   margin:0 10px 30px 10px;
   transition: 0.5s !important;
   width: 200px;
-  height: 200px;
-  z-index: 6679;
+  height: 300px;
   overflow: hidden;
-  
+  z-index: -4;
 }
-
-.search-div:hover .fa-play{
-  transform: translateY(0);
-  transition-delay: 0.4s;
-}
-
-.search-div:hover{
-  background-color:#f00 ;
-  transform: scale(1.25) ;
-  box-shadow: 0 25px 40px rgba(0,0,0,.5);
-  /* background: linear-gradient(180deg, #f00, #000); */
-}
-
 
 .search-div .search-img{
   object-fit: cover;
@@ -412,48 +413,6 @@ main{
   left: 0;
   border-radius: 5px;
 }
-
-/* .img-title-div{
- 
-  transition: 0.5s;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: ;
-  display: flex;
-  padding: 20px 5px ;
-  align-items: flex-end;
-}
-
-.img-title-div div{
-  background-color: rgb(224, 223, 223);
-  z-index: 7773;
-  
-}
-
-.img-title-div p{
-  font-size: 12px;
-  text-transform: uppercase;
-  transition: 0.5s;
-  transform: translateY(0);
-  margin-bottom: 5px;
-  color: #fff;
-} */
-
-/* .box-movie .content{
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 9999;
-  display: flex;
-  padding: 20px 5px ;
-  align-items: flex-end;
-} */
-
 
 /* modal */
 .modal-container.hidden {
@@ -475,20 +434,26 @@ main{
   backdrop-filter: blur(5px);
 }
 
-.modal-container .modal-image{
-  max-width: 900px;
+.modal-container .modal-overlay{
+  background-color: rgb(7, 3, 3);
+  width: 800px;
+  height: 400px;
+}
+
+.modal-overlay .modal-image{
+  max-width: 100%;
   outline: none;
   object-fit: cover;
-  width: 100%;
-  height: 60%;
+  height: 100%;
   border-radius: 10px 10px 0px 0px;
 }
 
 .modal-container .fa-times{
   position: absolute;
   top: 30px;
-  right: 30px;
+  right: 100px;
   cursor: pointer;
+  font-size: 32px;
   max-width: 32px;
 }
 
