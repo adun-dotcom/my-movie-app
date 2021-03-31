@@ -24,7 +24,16 @@ const gallerydiv = document.querySelector('.gallery-div')
 const movieShowcase = document.querySelector('.movie-showcase')
 const search = document.querySelector('.input')
 const showcase = document.querySelector('.showcase')
+const profile = document.querySelector('#user')
 
+// get user data from local storage
+let user = getUser()
+user = JSON.parse(user)
+profile.innerHTML = `
+<li>${user.firstname}</li>
+<li>${user.registerEmail}</li>
+
+`
 // FETCH MOVIE API
 const getMovies = async (url) => {
   try {
@@ -37,7 +46,7 @@ const getMovies = async (url) => {
   }
 }
 
-// GET MOVIE Fectch
+// GET MOVIE Fetch
 
 getMovies()
 async function displayMovies1(api, selector) {
@@ -118,7 +127,7 @@ async function searchMovies(url) {
        <i class="fas fa-play play" data-id="${id}"></i>
         <div class="img-overview">
        <div>${vote_average}</div>
-   <h4>${title ? title : name}</h4>
+   <h5>${title ? title : name}</h5>
    <small>${release_date ? release_date : first_air_date}</small>
  </div>
       `

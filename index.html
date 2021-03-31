@@ -24,25 +24,20 @@
             <!-- sign in -->
             <form id="sign-in" class="form-group">
                 <h1>Sign in to your account</h1>
-                <div class="input-box">
-                <i class="fas fa-user"></i>
-                <input class="username" type="text" placeholder="Username" required>
-                <p class="username-value"></p>
-            </div>
             <div class="input-box">
                 <i class="fas fa-envelope"></i>
                 <input class="email" type="email" placeholder="email" required>
-                <span class="error-email"></span>
+               
             </div>
 
             <div class="input-box">
-                <i class="fas fa-unlock" onclick=" passwordReveal()"></i>
-                <i class="fas fa-lock hidden" onclick=" passwordReveal()"></i>
-                <input class="password" type="password" placeholder="password" required>
-                <span class="error-password"></span>
+                <i id="icon-sign-in" class="fas fa-unlock" onclick=" passwordReveal()"></i>
+                <i class="fas fa-lock" onclick=" passwordReveal()"></i>
+                <input id="pwd-sign-in" class="password" type="password" placeholder="password" required>
+                
             </div>
             <div class="btn-box">
-                    <button class="submit">Sign in</button>
+                    <button  id="btn-signin" class="submit">Sign in</button>
             </div>
             <a href="" class="forgot app-link">Forgot your password?</a>
             <div class="or-separator">
@@ -54,32 +49,33 @@
              <form id="sign-up" class="form-group">
                 <h1>Create your account</h1>
                 <div class="input-box">
-                     <input type="text" placeholder="First Name" required>
+                     <input type="text" class="firstname" placeholder="First Name" required>
                 </div>
                 <div class="input-box">
                     
-                <input type="text" placeholder="Last Name" required>
+                <input type="text" class="lastname" placeholder="Last Name" required>
                 </div>
                 <div class="input-box">
-                <input class="email" type="email" placeholder="email" required>
+                <input id="email-register" class="email" type="email" placeholder="email" required>
+                 <span class="error-email"></span>
             </div>
 
             <div class="input-box">
-                <i class="fas fa-unlock" onclick=" passwordReveal()"></i>
-                <i class="fas fa-lock hidden" onclick=" passwordReveal()"></i>
-                <input class="password" type="password" placeholder="password" required>
+                <i id="icon-sign-up" class="fas fa-lock" onclick=" revealSignup()"></i>
+                <input id="pwd-sign-up" class="password passwordSignup" type="password" placeholder="password" required>
+                <span class="error-password"></span>
             </div>
             <small>By clicking Sign Up, you agree to our <a href="" class="app-link"> our Terms of Use </a> and <a href="" class="app-link"> our Privacy Policy.</a></small>
             
             <div class="btn-box">
-                    <button class="submit">Sign Up</button>
+                    <button id="btn-signup" class="submit">Sign Up</button>
             </div>
            
             </form>
              </div>
     </div>
     </section>
-    
+<script src="storage.js"></script>
 <script src="script.js"></script>
 </body>
 </html>

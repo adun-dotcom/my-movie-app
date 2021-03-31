@@ -44,17 +44,13 @@
           <input class="input" type="text" placeholder="find movie trailers" />
           <i class="fas fa-search"></i>
         </form>
-        <div class="dropdown account-bx">
+        <div class="dropdown profile-bx">
   <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
      <img src="https://occ-0-2706-2705.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAABUCZYfPbupvQjzSa3egePk8TFNDy2A_w15DEAq50IqW8MYmOtmbWwN4Txem7mgNYEMPJ1BY6uasiIJQ8JeFO3EU.png?r=b97" alt="">
   </button>
   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <div id="user">
-       <a class="dropdown-item" href="#">Action</a>
-    </div>
-    <div id="email">
-       <a class="dropdown-item" href="#">Action</a>
-    </div>
+    <ul id="user">
+    </ul>
   </div>
 </div>
        
@@ -76,14 +72,14 @@
       <!-- video gallery div -->
       <section class="movie-showcase">
         <!-- gallery1 -->
-        <div id="video-gallery1" class="video-gallery">
-          <p>Latest Trailers </p>
+        <div  class="video-gallery">
+          <p id="video-gallery1">Latest Trailers </p>
           <div class="galleries1 gallery-div"></div>
         </div>
 
         <!-- gallery2 -->
-        <div id="video-gallery2" class="video-gallery">
-          <p>Popular</p>
+        <div  class="video-gallery">
+          <p id="video-gallery2">Popular</p>
                <div class="galleries2 gallery-div"></div>
           </div>
       
@@ -109,14 +105,14 @@
   </div>
 
         <!-- gallery3 -->
-        <div id="video-gallery3" class="video-gallery">
-          <p>Comedy</p>
+        <div  class="video-gallery">
+          <p id="video-gallery3">Comedy</p>
           <div class="galleries3 gallery-div"></div>
         </div>
 
         <!-- gallery4 -->
-        <div id="video-gallery4" class="video-gallery">
-          <p>Top Lists</p>
+        <div  class="video-gallery">
+          <p id="video-gallery4">Top Lists</p>
           <div class="galleries4 gallery-div"></div>
         </div>
 
@@ -153,6 +149,7 @@
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script type="text/javascript" src="./slick-1.8.1/slick/slick.min.js"></script>
+    <script src="storage.js"></script>
     <script src="home.js"></script>
   </body>
 </html>
