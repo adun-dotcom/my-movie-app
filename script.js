@@ -10,7 +10,24 @@ const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0
 login.addEventListener('click', (event) => {
   event.preventDefault()
   valid()
+  storeStorage()
 })
+
+const userText = document.querySelector('.username-value')
+var storeUser; 
+username.addEventListener('input', letter=>{
+  storeUser = letter.target.value
+  localStorage.setItem('username', storeUser)
+})
+var storeEmail
+email.addEventListener('input', (letter) => {
+  storeEmail = letter.target.value
+  localStorage.setItem('email', storeEmail)
+})
+
+// const storeStorage = ()=>{
+//   localStorage.setItem('userUsername', email.value)
+// }
 
 function valid() {
   if (email.value.match(emailRegex) && password.value.length >= 6) {
