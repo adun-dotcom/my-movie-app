@@ -1,8 +1,11 @@
+
 const signUpUser = (param)=>{
-  if(!param.registerPwd || !param.registerEmail || !param.firstname || !param.lastname){
-    return alert('fill it my friend!')
+  if(!param.registerPwd || !param.registerEmail || !param.fullname ){
+    return alert('Data required')
   }else{
-    window.location.href = '/#btn-signin'
+    signIn.style.left = '0'
+    signUp.style.left = '100%'
+    linkBtn.style.left = '0'
   }
   
   let users = localStorage.getItem('users')
@@ -21,7 +24,7 @@ const createUser = (param)=>{
  let users = JSON.parse(localStorage.getItem('users'))
  let exist = users.find(user=>user.registerEmail === param.email && user.registerPwd === param.password)
  if(!exist){
-   alert('user not registered')
+   alert('Email or password incorrect')
  } else{
    localStorage.setItem('userData', JSON.stringify(exist))
    window.location.href = 'home.html'

@@ -24,11 +24,12 @@
         <div class="nav nav-white">
       <div class="account-link">
         <ul>
-        <li><a href="/home.html">Home</a></li>
-        <li><a class="account" href="index.html">Account</a></li>
-       <li><a class="help-out" href="index.html">Help out</a></li>
-         <li><a class="sign-out" href="index.html#sign-in">Sign Out</a></li>
-         </ul>
+         <li><a href="/home.html#video-gallery1">Latest Trailers</a></li>
+        <li><a href="/home.html#video-gallery2">Popular</a></li>
+        <li><a href="/home.html#video-gallery3">Comedy</a></li>
+        <li><a href="/home.html#video-gallery4">Top Lists</a></li>
+        <li><a href="/home.html#video-gallery5">Action</a></li>
+        </ul>
       </div>
       </div>
     </div>
@@ -44,13 +45,23 @@
           <input class="input" type="text" placeholder="find movie trailers" />
           <i class="fas fa-search"></i>
         </form>
-        <div class="dropdown profile-bx">
-  <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <!-- profile dropdown -->
+   <div class="dropdown profile-bx">
+     <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
      <img src="https://occ-0-2706-2705.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAABUCZYfPbupvQjzSa3egePk8TFNDy2A_w15DEAq50IqW8MYmOtmbWwN4Txem7mgNYEMPJ1BY6uasiIJQ8JeFO3EU.png?r=b97" alt="">
-  </button>
+    </button>
   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
     <ul id="user">
     </ul>
+    <hr>
+    <div class="profile-lists">
+      <ul>
+        <li><a href="/home.html">Home</a></li>
+        <li><a class="account" href="index.html">Account</a></li>
+       <li><a class="help-out" href="index.html">Help out</a></li>
+         <li><a class="sign-out" href="index.html#sign-in">Sign Out</a></li>
+         </ul>
+    </div>
   </div>
 </div>
        
@@ -61,36 +72,14 @@
 
     <!-- main -->
     <main id="home">
-      <section class="welcome">
-        <div class="welcome-text">
-           <h1>Welcome...</h1>
-          <div class="starting">
-            <p>Browse our lists of movie trailers for all genres which also includes movie rating and a brief overview. It is accessible for you to view. Explore now.</p>
-          </div>
-        </div>
-   </section>
-      <!-- video gallery div -->
-      <section class="movie-showcase">
-        <!-- gallery1 -->
-        <div  class="video-gallery">
-          <p id="video-gallery1">Latest Trailers </p>
-          <div class="galleries1 gallery-div"></div>
-        </div>
-
-        <!-- gallery2 -->
-        <div  class="video-gallery">
-          <p id="video-gallery2">Popular</p>
-               <div class="galleries2 gallery-div"></div>
-          </div>
-      
-             <!-- swiper container -->
-        <div class="swiper-container">
+          <!-- swiper container -->
+        <div class="swiper-container"> 
           <!-- <h3>Showcase</h3> -->
-    <div class="swiper-wrapper">
+     <div class="swiper-wrapper">
       <div class="swiper-slide">
         <img src="https://www.themoviedb.org/t/p/w220_and_h330_face/lJA2RCMfsWoskqlQhXPSLFQGXEJ.jpg" alt="">
       </div>
-      <div class="swiper-slide"> <img src="https://www.themoviedb.org/t/p/w220_and_h330_face/wRbjVBdDo5qHAEOVYoMWpM58FSA.jpg" alt=""></div>
+      <div class="swiper-slide"> <img  src="https://www.themoviedb.org/t/p/w220_and_h330_face/wRbjVBdDo5qHAEOVYoMWpM58FSA.jpg" alt=""></div>
       <div class="swiper-slide"> <img src="https://www.themoviedb.org/t/p/w220_and_h330_face/rqeYMLryjcawh2JeRpCVUDXYM5b.jpg" alt=""></div>
       <div class="swiper-slide"> <img src="https://www.themoviedb.org/t/p/w220_and_h330_face/wKTAz8fkoXJoHqPpi4ArAUGDtco.jpg" alt=""></div>
       <div class="swiper-slide"> <img src="https://www.themoviedb.org/t/p/w220_and_h330_face/6AccYL0eb7uzHn98IKaNjvJbyuA.jpg" alt=""></div>
@@ -102,23 +91,38 @@
     </div>
     <!-- Add Pagination -->
     <div class="swiper-pagination"></div>
-  </div>
+  </div> 
 
+      <!-- video gallery div -->
+      <section class="movie-showcase">
+        <!-- gallery1 -->
+        <div  class="video-gallery">
+          <p id="video-gallery1" class="gallery-title">Latest Trailers </p>
+          <div class="galleries1 gallery-div"></div>
+        </div>
+
+        <!-- gallery2 -->
+        <div  class="video-gallery">
+          <p id="video-gallery2" class="gallery-title">Popular</p>
+               <div class="galleries2 gallery-div"></div>
+          </div>
+<!--       
+         
         <!-- gallery3 -->
         <div  class="video-gallery">
-          <p id="video-gallery3">Comedy</p>
+          <p id="video-gallery3" class="gallery-title">Comedy</p>
           <div class="galleries3 gallery-div"></div>
         </div>
 
         <!-- gallery4 -->
         <div  class="video-gallery">
-          <p id="video-gallery4">Top Lists</p>
+          <p id="video-gallery4" class="gallery-title">Top Lists</p>
           <div class="galleries4 gallery-div"></div>
         </div>
 
         <!-- gallery5 -->
         <div id="video-gallery5" class="video-gallery">
-          <p>Action</p>
+          <p id="video-gallery5" class="gallery-title">Action</p>
           <div class="galleries5 gallery-div"></div>
         </div>
       </section>

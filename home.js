@@ -62,8 +62,9 @@ async function displayMovies1(api, selector) {
         title,
         name,
         release_date,
-        vote_average,
         first_air_date,
+        vote_average,
+        overview,
       } = movie
       const slider = document.createElement('div')
       slider.classList.add('movie-div')
@@ -71,12 +72,16 @@ async function displayMovies1(api, selector) {
                    <img class="img-${i} main-img" src="${
         IMAGE_URL + poster_path
       }" alt="">
-      
-       <i class="fas fa-play play" data-id="${id}"></i>
        <div class="img-overview">
-       <div>${vote_average}</div>
    <h4>${title ? title : name}</h4>
-   <small>${release_date ? release_date : first_air_date}</small>
+    </div>
+   <div class="movie-overlay">
+      <h5>About Movie</h5>
+      <p>Rating: <i class="fas fa-star"></i> ${vote_average}</p>
+      <p>Release Date: ${release_date ? release_date : first_air_date}</p>
+      <p class="img-summary">${overview}</p>
+      <i class="fas fa-play-circle play" data-id="${id}"></i> Trailer
+      <p></p>
  </div>
         `
       document.querySelector(selector).append(slider)
@@ -85,7 +90,7 @@ async function displayMovies1(api, selector) {
     // SCROLL FUNCTION
     $(document).ready(function () {
       $('.gallery-div').slick({
-        slidesToShow: 6,
+        slidesToShow: 5,
         slidesToScroll: 5,
       })
     })
@@ -115,8 +120,9 @@ async function searchMovies(url) {
         title,
         name,
         release_date,
-        vote_average,
         first_air_date,
+        vote_average,
+        overview,
       } = movie
       const slider2 = document.createElement('div')
       slider2.classList.add('search-div')
@@ -124,11 +130,16 @@ async function searchMovies(url) {
                <img class="img-${i} search-img" src="${
         IMAGE_URL + poster_path
       }" alt="">
-       <i class="fas fa-play play" data-id="${id}"></i>
-        <div class="img-overview">
-       <div>${vote_average}</div>
-   <h5>${title ? title : name}</h5>
-   <small>${release_date ? release_date : first_air_date}</small>
+         <div class="img-overview">
+   <h4>${title ? title : name}</h4>
+    </div>
+   <div class="movie-overlay">
+      <h5>About Movie</h5>
+      <p>Rating: ${vote_average}</p>
+      <p>Release Date: ${release_date ? release_date : first_air_date}</p>
+      <p class="img-summary">${overview}</p>
+     <i class="fas fa-play-circle play" data-id="${id}"></i> Trailer
+      <p></p>
  </div>
       `
       document.querySelector('.searching').append(slider2)
@@ -185,11 +196,11 @@ document.onclick = async function (event) {
         const { key } = data[0]
         modalImage.innerHTML = `
         <iframe width="100%" height="100%" src="https://www.youtube.com/embed/${key}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        
-
         `
       } else {
-        modalContainer.classList.add('hidden')
+         modalImage.innerHTML = `
+         <p>Video Not Available To View</p>
+         `
       }
     }
   } catch (e) {
@@ -219,15 +230,15 @@ $(document).ready(
    centeredSlides: true,
    slidesPerView: 'auto',
    coverflowEffect: {
-     rotate: 20,
-     stretch: 0,
-     depth: 200,
+     rotate: 90,
+     stretch: 200,
+     depth: 70,
      modifier: 1,
      slideShadows: true,
    },
    loop: true,
    autoplay: {
-     delay: 3000,
+     delay: 2000,
      disableOnInteraction: false,
    },
  }))
@@ -245,3 +256,13 @@ const menuList = document.querySelectorAll('.nav')
      menuList.forEach(menu=> {menu.classList.remove('visible')})
    }
    })
+
+   document.querySelector('#home').addEventListener('click', () => {
+    
+       menuToggle.classList.remove('active')
+       menuList.forEach((menu) => {
+         menu.classList.remove('visible')
+       })
+     
+   })
+  
