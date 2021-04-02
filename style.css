@@ -143,9 +143,11 @@ span{font-size: 12px;}
 }
 
 .form-group .input-box input::placeholder{
-    font-weight: 200;
-    color: #657482;
+    font-weight: lighter;
+    font-size: .98rem;
+    color: #999;
 }
+
 .hidden{
     visibility: hidden;
 }
@@ -237,6 +239,7 @@ hr{
 @media (max-width:991px){
     body{
         display: block;
+        overflow: hidden;
     }
 
     .container{
@@ -244,15 +247,45 @@ hr{
     }
     
     .form-bx{
-        margin-top: 90px;
-    }
+    position: relative;
+    margin: 150px auto;
+    width: 90%;
+    height: 70vh;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 2px 2px 3px 0 rgb(117 124 129 / 12%);
+    overflow: hidden;
+}
 }
 
 @media (max-width:460px){
-
     .container{
         padding: 0 10px;
     }
 
+    .form-group .app-link{
+    font-weight: 600;
+    text-decoration: none;
+    color: rgb(223, 30, 30);
+    font-size: 12px;
+    text-align: center;
+    transition: 0.5s;
+}
+
+    .form-bx{
+    position: relative;
+    margin: 100px auto;
+    width: 90%;
+    height: 70vh;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 2px 2px 3px 0 rgb(117 124 129 / 12%);
+    overflow: hidden;
+    padding-bottom: 40px;
+}
+    .form-group h1{
+        font-size: 1.2rem;
+        line-height: 1.2em;
+    }
     
 }

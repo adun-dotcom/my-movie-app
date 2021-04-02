@@ -25,15 +25,24 @@ const movieShowcase = document.querySelector('.movie-showcase')
 const search = document.querySelector('.input')
 const showcase = document.querySelector('.showcase')
 const profile = document.querySelector('#user')
+const signUserOut = document.querySelector('#sign-out-user')
 
 // get user data from local storage
 let user = getUser()
 user = JSON.parse(user)
+if(user){
 profile.innerHTML = `
-<li>${user.firstname}</li>
+<li>${user.fullname}</li>
 <li>${user.registerEmail}</li>
-
 `
+}
+
+// sign user out
+signUserOut.addEventListener('click', ()=>{
+  deleteUser()
+})
+
+
 // FETCH MOVIE API
 const getMovies = async (url) => {
   try {
