@@ -28,13 +28,13 @@ const signUpUser = (param) => {
 // login storage
 const createUser = (param) => {
   let users = JSON.parse(localStorage.getItem('users'))
+  if(!users)return alert('please sign up')
   let exist = users.find(
     (user) =>
       user.registerEmail === param.email &&
        user.registerPwd === param.password
   )
   if (!exist) {
-    
     alert('Email or password incorrect')
   } else {
     localStorage.setItem('userData', JSON.stringify(exist))
@@ -48,3 +48,5 @@ const getUser = () => {
 const deleteUser = () => {
   localStorage.removeItem('userData')
 }
+
+

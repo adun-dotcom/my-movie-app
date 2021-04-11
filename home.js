@@ -1,3 +1,7 @@
+const isLogged = localStorage.getItem('userData')
+if(!isLogged){
+   window.location.assign('/index.html')
+  }
 // DOM ELEMENTS
 const trendingApi =
   'https://api.themoviedb.org/3/trending/all/day?api_key=62bbe343222b3551f9b15d712b4d6b68&page=1'
@@ -27,21 +31,19 @@ const showcase = document.querySelector('.showcase')
 const profile = document.querySelector('#user')
 const signUserOut = document.querySelector('#sign-out-user')
 
+
 // get user data from local storage
 let user = getUser()
 user = JSON.parse(user)
-if(user){
-profile.innerHTML = `
+if (user) {
+  profile.innerHTML = `
 <li>${user.fullname}</li>
 <li>${user.registerEmail}</li>
-`
-}
-
+`}
 // sign user out
 signUserOut.addEventListener('click', ()=>{
   deleteUser()
 })
-
 
 // FETCH MOVIE API
 const getMovies = async (url) => {

@@ -10,8 +10,8 @@ const registerPwd = document.querySelector('#pwd-sign-up')
 const register = document.querySelector('#btn-signup')
 const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
 
-// localstorage function
-
+// check if logged in
+ 
 // button validation
 login.addEventListener('click', (event) => {
   event.preventDefault()
@@ -23,7 +23,7 @@ login.addEventListener('click', (event) => {
   
 })
 
-
+// //////////////////////////////////
 function valid() {
   if (email.value.match(emailRegex) && password.value.length >= 6) {
     document.location.href = 'home.html'
@@ -69,40 +69,32 @@ function validPassword() {
     return true
   }
 }
-
+ 
 registerPwd.addEventListener('keyup', validPassword)
 
 // show or hide password for sign in
 function passwordReveal() {
   const iconLock = document.querySelector('.fa-eye')
   const iconUnlock = document.querySelector('.fa-eye-slash')
-  if (password.type === 'password') {
-    password.type = 'text'
-    iconLock.classList.remove('hidden')
-    iconUnlock.classList.add('hidden')
-  } else {
-    password.type = 'password'
-    iconLock.classList.add('hidden')
-    iconUnlock.classList.remove('hidden')
-  }
-}
-
-// show or hide password for sign up
-function revealSignup() {
-  // const iconUnlock = document.querySelector('.fa-unlock')
   const iconSignup = document.querySelector('#icon-sign-up')
   const pwd = document.querySelector('.passwordSignup')
-  if (pwd.type === 'password') {
+
+  if (password.type === 'password' || pwd.type === 'password') {
+    password.type = 'text'
     pwd.type = 'text'
+    iconLock.classList.remove('hidden')
+    iconUnlock.classList.add('hidden')
     iconSignup.classList.add('fa-eye')
-      iconSignup.classList.remove('fa-eye-slash')
+    iconSignup.classList.remove('fa-eye-slash')
   } else {
+    password.type = 'password'
     pwd.type = 'password'
+    iconLock.classList.add('hidden')
+    iconUnlock.classList.remove('hidden')
     iconSignup.classList.remove('fa-eye')
     iconSignup.classList.add('fa-eye-slash')
   }
 }
-
 
 // function to show sign in or sign up
 const signIn = document.querySelector('#sign-in')
